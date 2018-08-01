@@ -1,0 +1,15 @@
+[Unit]
+Description=Telos Node
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/nodeos --data-dir /home/telos/data --config-dir /home/telos/config
+WorkingDirectory=/home/telos
+Restart=always
+RestartSec=60
+User=telos
+Group=telos
+
+[Install]
+WantedBy=multi-user.target

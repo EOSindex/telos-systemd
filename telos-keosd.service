@@ -1,0 +1,15 @@
+[Unit]
+Description=Telos Keosd Wallet Service
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/keosd --data-dir /home/telos/wallet/data --config-dir /home/telos/wallet/config --http-server-address 127.0.0.1:5555
+WorkingDirectory=/home/telos/wallet
+Restart=always
+RestartSec=60
+User=telos
+Group=telos
+
+[Install]
+WantedBy=multi-user.target
